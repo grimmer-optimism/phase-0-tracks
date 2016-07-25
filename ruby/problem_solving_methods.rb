@@ -1,10 +1,22 @@
+#Check each index of array if value exists
+#if true return array.index
 
-def simple_search(int, arr)
-  arr.include?(int)
+#use until loop to go through array. Start at end (length of array)
+#each loop subtract one from the loop length to move one index over
+
+
+def simple_search(int, array)
+  n = array.length
+  until n = 0
+    if array[n] == int
+    puts arr[n]
+      n -= 1
+    end
+  end
 end
 
-arr = [1, 2, 3]
-p simple_search(3, arr)
+array = [1, 2, 3]
+p simple_search(3, array)
 
 #Release 1
 #input n
