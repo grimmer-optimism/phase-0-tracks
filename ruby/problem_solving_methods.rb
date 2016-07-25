@@ -30,7 +30,7 @@ p fibonacci(100) == 218922995834555169026
 
 #Release 2
 #Choosing to do bubble sort
-#Each element compared to the one next to it and swapped if the one on the left is larger
+#Each element compared to the one next to it and swap if the one on the left is larger
 #If I have an array [9, 5, 4, 3] it will return [3, 4, 5, 9]
 
 #2. I found both a video and an article on bubble sort. I felt that both helped me equally. I've
@@ -44,6 +44,8 @@ p fibonacci(100) == 218922995834555169026
 #Check first two elements if index 0 > 1. If true swap /w destrutive method and restart loop
 #if false, check elements 1 > 2. If true swap /w destrutive method and restart loop
 #If 1 > 2 true, move to postiion 2 > 3 check.
+#Worst case scenario descending array so loop will run one less time than the array's length
+
 
 #elements could still be wrong after first pass through. Loop run n-1 times
 
