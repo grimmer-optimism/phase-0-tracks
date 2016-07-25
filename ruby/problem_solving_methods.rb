@@ -48,7 +48,7 @@ p fibonacci(100) == 218922995834555169026
 #elements could still be wrong after first pass through. Loop run n-1 times
 
 def bubble_sort(array)
-  n = array.lenth
+  n = array.length
 
   loop do
       swapped = false
@@ -62,7 +62,8 @@ def bubble_sort(array)
 
   break if not swapped
   end
+  array
 end
 
-test_array = [1, 3, 2]
-p bubble_sort(test_array)
+a = [1, 3, 2]
+p bubble_sort(a)
