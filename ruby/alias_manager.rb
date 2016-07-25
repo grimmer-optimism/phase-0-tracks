@@ -12,8 +12,10 @@ agent_names = {}
 #convert name string into array of single characters for the encoder
 loop do
 
-puts "Enter Spy's name or tyupe 'quit' to finish:"
+puts "Enter Spy's name or type 'quit' to finish:"
 name = gets.chomp
+
+break if name == 'quit'
 
 name_ary = name.downcase.split.reverse.insert(1, " ").join('').split(//)
 
@@ -40,10 +42,20 @@ end
 #convert string to an array with last name in index 0
   spy_name_ary = encrypter(name_ary).join.split
 
+ #conditional incase the spy goes by 1 name. Also my capitalize methods were undefined until I put them in the if method. Not sure why.
+  if spy_name_ary.length == 1
+    spy_name = spy_name_ary[0].capitalize
+  else
   spy_last_name = spy_name_ary[0].capitalize
   spy_first_name = spy_name_ary[1].capitalize
 #convert capitalized name strings into array, put a space between the two, and then create a string
   spy_name = [spy_last_name, spy_first_name].insert(1, " ").join
+  end
+
   agent_names[name] = spy_name #store the resultant data in agent names hash
 
+end
+
+agent_names.each do |name, spy_name| #Iterates through hash and prints user data for Release 2
+  puts "#{name}'s secret agent spy name is #{spy_name}"
 end
