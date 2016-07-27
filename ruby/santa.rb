@@ -1,5 +1,9 @@
 class Santa
-#had to remove name from initialize for new santa loop.
+
+  attr_reader :ethnicity, :gender
+  attr_accessor :age
+
+
   def initialize(gender, ethnicity)
     @age = 0
     @gender = gender
@@ -51,6 +55,6 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 
 20.times do
 	new_santa = Santa.new(example_genders.sample, example_ethnicities.sample)
-	age = Random.rand(0...140)
-	puts "This Santa is #{new_santa.gender} gender and #{new_santa.ethnicity}"
+	new_santa.age = rand(0..140)
+	puts "This Santa is #{new_santa.gender} gender, #{new_santa.ethnicity} ethnicity, and #{new_santa.age} years old."
 end
