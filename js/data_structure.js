@@ -8,7 +8,7 @@ names.push("Charley");
 console.log(names);
 console.log(colors);
 
-// Use two arrays to create an object
+// Use two arrays to create an object.
 
 // Key of object = horse names with color values
 // Key, value --> names, colors
@@ -42,5 +42,5 @@ console.log(ford);
 ford.honk()
 
 for (var i = 0; i < Car.length; i++) {
-  console.log("The car's color is " + ford['color'] + ", the model is " + ford['model'] + "it is new" + ford['isNew'] + ".");    
+  console.log("The car's color is " + ford['color'] + ", the model is " + ford['model'] + "it is new" + ford['isNew'] + ".");
 }
