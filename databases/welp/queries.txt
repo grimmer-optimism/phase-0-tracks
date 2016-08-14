@@ -1,0 +1,12 @@
+SELECT * FROM users, reviews, businesses WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+2|Mandy|Kaling|1|5|great food!!|1|2|1|Grundy
+3|Angela|Jolie|2|4|pretty tasty|2|3|2|Towing
+2|Mandy|Kaling|3|1|nasty!|3|2|3|Lotus
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users, reviews, businesses WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+Mandy|Kaling|Grundy|5|great food!!
+Angela|Jolie|Towing|4|pretty tasty
+Mandy|Kaling|Lotus|1|nasty!
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users, reviews, businesses WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id AND businesses.name="Lotus";
+Mandy|Kaling|Lotus|1|nasty!
