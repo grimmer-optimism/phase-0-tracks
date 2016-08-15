@@ -1,0 +1,51 @@
+SELECT * FROM students;
+1|Missy Elliot|31|true|3
+2|Elizabeth Lefever|22|true|2
+3|Clark Kent|27|false|2
+4|Bob Ross|45|false|1
+5|Gimli Son of Gloin|50|true|4
+6|Selena Gomez|23|false|3
+
+UPDATE students SET age=28 WHERE name="Clark Kent";
+~no output~
+
+SELECT * FROM students, cohorts WHERE students.cohort_id=cohorts.id;
+1|Missy Elliot|31|true|3|3|Salamanders
+2|Elizabeth Lefever|22|true|2|2|Red Pandas
+3|Clark Kent|28|false|2|2|Red Pandas
+4|Bob Ross|45|false|1|1|Golden Bears
+5|Gimli Son of Gloin|50|true|4|4|Wolves
+6|Selena Gomez|23|false|3|3|Salamanders
+
+SELECT students.name, cohorts.name FROM students, cohorts WHERE students.cohort_id=cohorts.id;
+Missy Elliot|Salamanders
+Elizabeth Lefever|Red Pandas
+Clark Kent|Red Pandas
+Bob Ross|Golden Bears
+Gimli Son of Gloin|Wolves
+Selena Gomez|Salamanders
+
+DELETE FROM students WHERE name="Missy Elliot";
+~no output~
+
+SELECT * FROM students INNER JOIN cohorts ON students.cohort_id=cohorts.id;
+2|Elizabeth Lefever|22|true|2|2|Red Pandas
+3|Clark Kent|28|false|2|2|Red Pandas
+4|Bob Ross|45|false|1|1|Golden Bears
+5|Gimli Son of Gloin|50|true|4|4|Wolves
+6|Selena Gomez|23|false|3|3|Salamanders
+INNER JOIN returns all rows from both tables where there is a match. If there are rows in first table that do not have matches in second table, those rows will not be listed.
+
+SELECT * FROM students LEFT JOIN cohorts ON students.cohort_id=cohorts.id;
+2|Elizabeth Lefever|22|true|2|2|Red Pandas
+3|Clark Kent|28|false|2|2|Red Pandas
+4|Bob Ross|45|false|1|1|Golden Bears
+5|Gimli Son of Gloin|50|true|4|4|Wolves
+6|Selena Gomez|23|false|3|3|Salamanders
+The LEFT JOIN returns all the rows from the first table, even if there are no matches in the second table. If there are rows in first table that do not have matches in second table, those rows also will be listed.
+
+SELECT * FROM students RIGHT JOIN cohorts ON students.cohort_id=cohorts.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+If sqlite did support it, the RIGHT JOIN would return all the rows from the second table, even if there are no matches in the first table. If there had been any rows in second table that did not have matches in first table, those rows also would have been listed.
+
+
